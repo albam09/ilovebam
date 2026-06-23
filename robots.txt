@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ilovebam10.com/sitemap.xml
+Sitemap: https://www.ilovebam10.com/image-sitemap.xml

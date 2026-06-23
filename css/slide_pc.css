@@ -1,0 +1,413 @@
+.top_slide {
+	/* layout */
+	display: flex;
+	flex-wrap: nowrap;
+	/* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+	overflow: hidden;
+
+	/* position */
+	/* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+	position: relative;
+
+	/* size */
+	width: 100%;
+	height:170px;
+	/* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+	user-select: none;
+	border: 3px solid var(--group_color_38);
+	/* box-shadow: 0 0 15px 5px var(--group_color_24); */
+    /* border: 1px solid transparent; */
+    -webkit-animation: glow 1.0s infinite alternate;  
+    animation: glow 1.0s infinite alternate;
+    -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+    -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+         transition: border 1.0s linear, box-shadow 1.0s linear;
+
+	position: relative;
+}
+.top_slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 170px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.4s;
+    background: #202020;
+	border-right: 2px solid #333;
+}
+.top_slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.top_slide_prev_button {
+  left: 5px;
+}
+.top_slide_next_button {
+  right: 5px;
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.top_slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top_slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.top_slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #7fb5ff;
+}
+
+.top_slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.4s;
+}
+
+@-webkit-keyframes glow {
+    to {
+		 box-shadow: 0px 0px 3px 3px var(--group_color_15)
+/*
+		 border-color: var(--group_color_56);
+    -webkit-box-shadow: 0 0 5px var(--group_color_56);
+       -moz-box-shadow: 0 0 5px var(--group_color_56);
+            box-shadow: 0 0 5px var(--group_color_56);
+*/
+	}
+}
+@keyframes glow {
+    to {
+		 box-shadow: 0px 0px 3px 3px var(--group_color_15)
+/*
+		 border-color: var(--group_color_56);
+    -webkit-box-shadow: 0 0 5px var(--group_color_56);
+       -moz-box-shadow: 0 0 5px var(--group_color_56);
+            box-shadow: 0 0 5px var(--group_color_56);
+*/
+	}
+}
+
+.top_slide_item .premium_random_banner_wait {
+    color: #999;
+    font-size: 14px;
+}
+.top_slide_item .premium_random_banner_error {
+    color: #f33;
+	font-weight:bold;
+    font-size: 14px;
+}
+
+.top_slide_iteminfo_wrap {
+	width: 50%;
+    height: 100%;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.top_slide_iteminfo_wrap .top_slide_shopinfo_img_wrap {
+    margin: 10px;
+    width: 145px;
+    height: 135px;
+}
+
+.top_slide_iteminfo_wrap .top_slide_shopinfo_img_wrap a {
+	display:block;
+}
+
+.top_slide_iteminfo_wrap .top_slide_shopinfo_img_wrap img {
+	width: 145px;
+    height: 135px;
+    background: #333;
+}
+
+.top_slide_shopinfo_wrap ul {
+    width: 100%;
+    height: 85%;
+}
+
+.top_slide_shopinfo_wrap .shopname {
+	color:#abe0b7;
+	font-size: 20px;
+	font-weight:bold;
+    max-width: 400px;
+    word-break: break-all;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+}
+
+span.itemlbl {
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    color: #999;
+	font-size: 14px;
+}
+
+span.itemdata {
+	color:#fff;
+}
+
+div#top_slide_txt {
+	position: absolute;
+    font-size: 10px;
+    background: var(--group_color_8);
+    padding: 0 5px;
+    line-height: 18px;
+    left: 0;
+    z-index: 2;
+}
+
+.mini_slide {
+	/* layout */
+	display: flex;
+	flex-wrap: nowrap;
+	/* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+	overflow: hidden;
+
+	/* position */
+	/* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+	position: relative;
+
+	/* size */
+	width: 100%;
+	height:100px;
+	/* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+	user-select: none;
+	border: 3px solid var(--group_color_38);
+	box-shadow: 0 0 5px 5px var(--group_color_24);
+    /* border: 1px solid transparent; */
+    -webkit-animation: glow 1.0s infinite alternate;  
+    animation: glow 1.0s infinite alternate;
+    -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+    -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+         transition: border 1.0s linear, box-shadow 1.0s linear;
+
+	position: relative;
+}
+.mini_slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 100px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.4s;
+    background: #202020;
+	border-right: 2px solid #333;
+}
+.mini_slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.mini_slide_prev_button {
+  left: 5px;
+}
+.mini_slide_next_button {
+  right: 5px;
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.mini_slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mini_slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.mini_slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #7fb5ff;
+}
+
+.mini_slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.4s;
+}
+
+@-webkit-keyframes glow {
+    to {
+		 box-shadow: 0 0 5px 5px var(--group_color_24)
+/*
+		 border-color: var(--group_color_24);
+    -webkit-box-shadow: 0 0 5px var(--group_color_24);
+       -moz-box-shadow: 0 0 5px var(--group_color_24);
+            box-shadow: 0 0 5px var(--group_color_24);
+*/
+	}
+}
+@keyframes glow {
+    to {
+      box-shadow: 0 0 5px 5px var(--group_color_24)
+/*
+		 border-color: var(--group_color_24);
+    -webkit-box-shadow: 0 0 5px var(--group_color_24);
+       -moz-box-shadow: 0 0 5px var(--group_color_24);
+            box-shadow: 0 0 5px var(--group_color_24);
+*/
+	}
+}
+
+.mini_slide_item .premium_random_banner_wait {
+    color: #999;
+    font-size: 14px;
+}
+.mini_slide_item .premium_random_banner_error {
+    color: #f33;
+	font-weight:bold;
+    font-size: 14px;
+}
+
+.mini_slide_iteminfo_wrap {
+	width: 50%;
+    height: 100%;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.mini_slide_iteminfo_wrap .mini_slide_shopinfo_img_wrap {
+    margin: 10px;
+    width: 145px;
+    height: 90px;
+}
+
+.mini_slide_iteminfo_wrap .mini_slide_shopinfo_img_wrap a {
+	display:block;
+}
+
+.mini_slide_iteminfo_wrap .mini_slide_shopinfo_img_wrap img {
+	width: 145px;
+    height: 90px;
+    background: #333;
+}
+
+.mini_slide_shopinfo_wrap ul {
+    width: 100%;
+    height: 100%;
+}
+
+.mini_slide_shopinfo_wrap .shopname {
+	color:var(--group_color_8);
+	font-size: 20px;
+	font-weight:bold;
+    max-width: 400px;
+    word-break: break-all;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+}
+
+.hide {display:none}
