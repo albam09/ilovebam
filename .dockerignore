@@ -1,5 +1,5 @@
-*.zip
-.git
-.gitignore
 node_modules
+.git
+*.zip
+README*
 .DS_Store

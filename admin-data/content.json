@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "auth": {
+    "user": "admin",
+    "passwordHash": "500ff1149e6bbc66402fe531b66e48f0312d241319a70cbd9b07957caa72b35b"
+  },
+  "site": {
+    "title": "아이러브밤10 - 광주 상무지구 노래방·가라오케 안내",
+    "description": "아이러브밤10은 광주 상무지구 노래방, 가라오케, 퍼블릭, 룸바, 2차 연관 검색 흐름을 정리한 안내 사이트입니다.",
+    "phone": "010-8095-3087",
+    "kakao": "",
+    "footerText": "광주 상무지구 노래방·가라오케 안내",
+    "injectManagedSection": true
+  },
+  "notices": [],
+  "shops": [],
+  "images": [],
+  "updatedAt": "2026-06-25T00:00:00.000Z"
+}
