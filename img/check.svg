@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_186" data-name="그룹 186" transform="translate(-600 -931)">
+    <path id="check" class="cls-1" d="M6.933,14.2a.97.97,0,0,1-.688-.285L.286,7.96A.973.973,0,0,1,1.661,6.584l5.272,5.272L18.165.624A.973.973,0,0,1,19.541,2L7.621,13.92a.971.971,0,0,1-.688.285Zm0,0" transform="translate(604.746 939.079)"/>
+    <rect id="사각형_153" data-name="사각형 153" class="cls-2" width="30" height="30" transform="translate(600 931)"/>
+  </g>
+</svg>

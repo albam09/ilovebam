@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "auth": {
+    "user": "admin",
+    "passwordHash": "500ff1149e6bbc66402fe531b66e48f0312d241319a70cbd9b07957caa72b35b"
+  },
+  "site": {
+    "title": "ILOVEBAM - 광주 · 전라 유흥 커뮤니티",
+    "description": "ILOVEBAM은 강렬한 블랙·레드 무드의 광주·전라 유흥 커뮤니티입니다. 상무지구 노래방, 가라오케, 룸바, 퍼블릭 안내와 공지, 업소 정보를 제공합니다.",
+    "phone": "010-8095-3087",
+    "kakao": "",
+    "footerText": "ILOVEBAM | 광주 · 전라 유흥 커뮤니티",
+    "injectManagedSection": true
+  },
+  "notices": [
+    {
+      "id": "n1",
+      "title": "공지사항",
+      "body": "업데이트 안내 · 신규 업소 업데이트 진행중 / 예약 및 문의는 상단 전화 버튼 이용",
+      "active": true
+    }
+  ],
+  "shops": [],
+  "images": [],
+  "updatedAt": "2026-06-25T00:00:00.000Z"
+}

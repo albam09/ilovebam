@@ -1,0 +1,423 @@
+﻿@charset "utf-8";
+
+/* sidebar Box */
+#sidebar-box { top: 0px; width: 320px; height: 100%; position: fixed; z-index:1000; background: #2c2d30; }
+#sidebar-box .profile {
+/*
+	border: 2px solid #4d4d4d;
+	padding: 5px;
+	background: #1a1a1a;
+	border-radius: 5px
+*/
+}
+#sidebar-box .sidebar-content { position:relative; padding:0px 15px; overflow:auto; overflow-x:hidden; height:100%; -webkit-overflow-scrolling:touch; border-left: 2px solid #222;}
+#sidebar-box .sidebar-head { position:absolute; top:0; left:0px; width:100%; height:10px; z-index:10; }
+#sidebar-box .div-title-underline-thin { margin-bottom:0px; }
+#sidebar-box .sidebar-sns-login img { margin:5px 0px 0px; width:20%; float:left; }
+#sidebar-box .sidebar-icon-tbl { display:table; width:100%; table-layout:fixed; }
+#sidebar-box .sidebar-icon-cell { display:table-cell;	text-align:center; vertical-align:top; padding:0px 0px 10px; }
+#sidebar-box .sidebar-icon-cell span { display:block; font-size:12px; letter-spacing:-1px; margin-top:6px; }
+#sidebar-box-mask { display:none; position:fixed; z-index:999; background:rgba(0,0,0,0.75); left:0; top:0; width:100%; height:100%; }
+
+#sidebar-box .sidebar-menu { margin:0px; border-top:1px solid #eee; }
+#sidebar-box .sidebar-menu a { display:block; }
+#sidebar-box .sidebar-menu .panel { background: none; margin-top:0px; line-height:24px; }
+#sidebar-box .sidebar-menu .ca-head { padding: 0px; border-bottom:1px solid #eee; }
+#sidebar-box .sidebar-menu .ca-head > a { padding: 4px 15px; }
+#sidebar-box .sidebar-menu .ca-head.active > a { font-weight:bold !important; color: crimson !important; }
+#sidebar-box .sidebar-menu .ca-head > a.no-sub::after { top: 0px; font-family: "FontAwesome"; float: right; position: relative; content: "\f105"; }
+#sidebar-box .sidebar-menu .ca-head > a > .ca-href { display:inline-block; width:30px; cursor:pointer; }
+#sidebar-box .sidebar-menu .ca-head > a > .ca-href::after { top: 0px; float: right; position: relative; content: "+"; }
+#sidebar-box .sidebar-menu .ca-head.active > a > .ca-href::after { top: 0px; font-family: "FontAwesome"; float: right; position: relative; content: "\f107"; }
+#sidebar-box .sidebar-menu .ca-sub { padding:0; margin:0; list-style:none; background: #fafafa; padding:0px; margin:0px; border-bottom:1px solid #eee }
+#sidebar-box .sidebar-menu .ca-sub li { padding:5px 25px; padding-right:12px; border-bottom:1px solid #eee; }
+#sidebar-box .sidebar-menu .ca-sub li:last-child { border-bottom:0px; }
+#sidebar-box .sidebar-menu .ca-sub li.on a { font-weight:bold !important; color: crimson !important; }
+#sidebar-box .sidebar-menu .ca-line { border:0px; background:#fff; font-weight:bold; }
+
+#sidebar-box .sidebar-search { border:1px solid #eee; background:#fafafa; padding:8px; margin-bottom:10px; }
+#sidebar-box .sidebar-search .row { margin-left:-3px; margin-right:-3px; }
+#sidebar-box .sidebar-search .row > div { padding-left:3px; padding-right:3px; }
+
+#sidebar-box .sidebar-media { border-bottom:1px solid #eee; margin:0px 0px 8px; padding:0px 0px 8px; line-height:20px; }
+#sidebar-box .sidebar-media .media-photo i { background:#eee; border-radius: 50%; padding: 8px; width: 40px; height: 40px; text-align: center; font-size: 22px; display: inline-block; }
+#sidebar-box .sidebar-media .media-photo img { border-radius: 50%; width: 40px !important; height: 40px !important; display:inline-block; }
+#sidebar-box .sidebar-media .media-info { font-size:12px; color:#888; }
+#sidebar-box .sidebar-media .media-info i { margin-left:10px; }
+
+#sidebar-box .sidebar-login label { line-height:12px !important; font-weight: normal; cursor: pointer; }
+#sidebar-box .sidebar-login .profile .photo { margin-right:12px; }
+#sidebar-box .sidebar-login .profile .photo img { width:60px; height:60px; border-radius: 50%; border:0; }
+#sidebar-box .sidebar-login .profile .photo i { width:60px; height:60px; font-size:30px; padding:15px 0px 0px; text-align:center; background: #454545; color: #898989; border-radius: 50%; }
+#sidebar-box .sidebar-login .profile h3 { font-size:18px; line-height:32px; padding:0px; margin:0px; letter-spacing:-1px; display:block; text-overflow:ellipsis; white-space:nowrap; word-wrap:normal; overflow:hidden; }
+#sidebar-box .sidebar-login .form-group { margin-bottom:10px; }
+
+#sidebar-box .sidebar-list { padding:0px; margin:0px; list-style:none; }
+#sidebar-box .sidebar-list a { display:block; padding:4px 15px; border-bottom:1px solid #6d6d6d; }
+#sidebar-box .sidebar-list.list-links a::after { top: 0px; font-family: "FontAwesome"; float: right; position: relative; content: "\f105"; }
+#sidebar-box .sidebar-list.list-links a.no-fa::after { content: ""; }
+
+#sidebar-box .progress { position:relative; border-radius: 0px; height: 28px; overflow: hidden; margin-bottom: 15px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1); background-color: rgb(245, 245, 245); -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
+#sidebar-box .progress .sr-only { margin: 0px 15px; left: 0px; width: auto; height: 28px; line-height: 28px; font-size: 12px; clip: auto; }
+#sidebar-box .sr-score { height: 28px; line-height: 28px; font-size: 12px; padding-right:8px; }
+#sidebar-box .sr-secret { display:inline-block; padding:0px; margin:0px; line-height:12px; vertical-align:middle; background-repeat: no-repeat; background-position: 0px 0px; width:12px; height:12px; background-image: url('img/icon_secret.gif'); }
+
+#sidebar-box .sidebar-wing { position:absolute; width:36px; z-index:1; text-align:center; }
+#sidebar-box .sidebar-wing-close { background:#2c2d30; font-size: 18px; font-weight: 300 !important; width:36px; height:50px; line-height:50px !important; border:1px solid #2c2d30; cursor:pointer; }
+
+/* JS 축 클래스: 슬라이드 방향·닫기 버튼 위치 (모바일=왼쪽+닫기우측 / PC=오른쪽+닫기좌측) */
+#sidebar-box.sidebar-axis-right {
+	right: -355px;
+	left: auto;
+	border-left: 1px solid #2c2d30;
+	border-right: none;
+	margin-left: 40px;
+	margin-right: 0;
+}
+#sidebar-box.sidebar-axis-right .sidebar-wing {
+	left: 0;
+	right: auto;
+	margin-left: -35px;
+	margin-right: 0;
+}
+#sidebar-box.sidebar-axis-right .sidebar-wing-close {
+	border-right: 0;
+}
+
+#sidebar-box.sidebar-axis-left {
+	left: -355px;
+	right: auto !important;
+	border-right: 1px solid #2c2d30;
+	border-left: none;
+	margin-right: 40px;
+	margin-left: 0;
+}
+#sidebar-box.sidebar-axis-left .sidebar-wing {
+	right: 0;
+	left: auto;
+	margin-right: -35px;
+	margin-left: 0;
+}
+#sidebar-box.sidebar-axis-left .sidebar-wing-close {
+	border-left: 0;
+}
+
+@media (min-width: 768px) {
+	#sidebar-box { padding-bottom:0px; }
+	#sidebar-box .sidebar-wing { top:20%; }
+	#sidebar-box .sidebar-wing-icon { border-right:0px; display:block; }
+}
+@media (max-width: 767px) {
+	#sidebar-box { padding-bottom:0px; }
+	#sidebar-box .sidebar-wing { top:35%; }
+	#sidebar-box .sidebar-wing-icon { display:none; }
+}
+
+/* 사이드바 메뉴 아이콘: Font Awesome 4 (.fa). 커스텀 SVG 세트 백업: widget.css.backup-icons-v2-state, icons-v2.backup-v2-svgs/ */
+
+.menu-icon {
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: none !important;
+}
+
+.menu-icon > .fa {
+	font-size: 22px;
+	line-height: 1;
+	color: #ececec;
+}
+
+.menu-item-empty{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	background-size: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+/* 메뉴 컨테이너 스타일 예시 */
+.menu-container {
+	/* background-color: #333; */
+	/* padding: 5px; */
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/* 메뉴 아이템 스타일 예시 */
+.menu-item,.my-menu-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	text-decoration: none;
+	font-size: 12px;
+}
+a.menu-item {
+	padding: 3px 0px;
+	background: #434343;
+	border: 1px solid #535353;
+	border-radius: 5px;
+	width: 54px;
+	height: 70px;
+	white-space: nowrap;
+	position: relative;
+	overflow: visible;
+}
+/* 4칸 정렬용 빈칸: 크기는 유지하고 보이지만 않게 */
+a.menu-item.menu-item-empty, a.my-menu-item.menu-item-empty {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.interest-shop-badge {
+	position: absolute;
+	top: -8px;
+	right: -7px;
+	background: var(--group_color_6);
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 3px 6px;
+	border-radius: 10px;
+	min-width: 16px;
+	text-align: center;
+	z-index: 10;
+	letter-spacing: -1px;
+}
+
+a.menu-item.disabled {
+	background: #333;
+	color: #999;
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
+}
+
+a.my-menu-item {
+	padding: 3px 0px;
+	background: #292927;
+	border: 1px solid #535353;
+	border-radius: 5px;
+	width: 54px;
+	height: 70px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* 실시간 채팅: 미읽음 뱃지(interest-shop-badge)가 잘리지 않도록 */
+a.my-menu-item.sidebar-livechat-item {
+	position: relative;
+	overflow: visible !important;
+}
+
+.sidebar-content::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar-content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+a.menu-item.menu-item-empty, a.my-menu-item.menu-item-empty {
+	width: 55px;
+	padding: 0;
+	background: inherit;
+	border: inherit;
+	height: 70px;
+	cursor: initial;
+}
+
+
+/* 색상 변경을 위한 필터 클래스들 */
+.icon-color-red {
+	filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(97%) contrast(112%);
+}
+
+.icon-color-blue {
+	filter: invert(8%) sepia(100%) saturate(7495%) hue-rotate(248deg) brightness(89%) contrast(145%);
+}
+
+.icon-color-green {
+	filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+.icon-color-yellow {
+	filter: invert(73%) sepia(85%) saturate(1104%) hue-rotate(359deg) brightness(101%) contrast(104%);
+}
+
+.icon-color-purple {
+	filter: invert(10%) sepia(100%) saturate(5919%) hue-rotate(289deg) brightness(114%) contrast(115%);
+}
+
+.icon-color-orange {
+	filter: invert(49%) sepia(57%) saturate(2878%) hue-rotate(346deg) brightness(102%) contrast(107%);
+}
+
+/* 호버: Font Awesome 글리프 (기존 SVG 배경용 filter 제거) */
+.menu-item:hover .menu-icon,
+a.my-menu-item:hover .menu-icon {
+	filter: none;
+}
+
+.menu-item:hover .menu-icon > .fa,
+a.my-menu-item:hover .menu-icon > .fa {
+	filter: none;
+	color: #fff;
+}
+
+a.my-menu-item:hover {
+	background: var(--group_color_43);
+	color: #fff;
+}
+
+a.menu-item:hover {
+	background: var(--group_color_43);
+	color: #ffffff;
+}
+
+a.menu-item .text {
+	line-height: 14px;
+	text-align: center;
+}
+
+a.menu-item.menu-item-empty:hover {
+	background: initial;
+	color: initial;
+	cursor: initial;
+}
+
+a.menu-item.disableMenu {
+	color: #a19797;
+	filter: opacity(20%);
+	cursor: not-allowed;
+}
+
+a.my-menu-item.disableMenu {
+	color: #a19797;
+	cursor: not-allowed;
+}
+
+a.my-menu-item .text {
+	line-height: 14px;
+	text-align: center;
+}
+
+a.my-menu-item div#waitjumptimer {
+	position: absolute;
+	top: 0;
+	color: #ffe72a;
+	font-weight: bold;
+	background: #333333cc;
+	width: 54px;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 1.3em;
+}
+
+.sidebar-content #shopmanage {
+	padding: 0px;
+	width: 100%;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 26px;
+}
+.sidebar-content .menu-container.managerwrap {
+	border: 1px solid var(--group_color_13);
+    padding: 5px 0 10px;
+    background: var(--group_color_13);
+}
+
+.sidebar-content #shopmanage b {
+	width: 100%;
+	text-align: center;
+	display: block;
+	background: #814242;
+}
+
+.sidebar-content .menu-container ul.upso_mn {
+	width: 95%;
+	font-size: 14px;
+}
+
+.sidebar-content .menu-container ul li.no-fa {
+	position: relative;
+	display: block;
+	padding: 1px 5px;
+	line-height: 24px;
+	text-align: left;
+}
+
+.sidebar-content .menu-container ul li strong.favoriteshop {
+    color: #ff3;
+    padding: 5px 5px 3px;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    float: right;
+}
+
+.sidebar-content .menu-container ul li strong.date {
+	background: #ff044b;
+	padding: 5px 5px 3px;
+	display: inline-block;
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 18px;
+	float: right;
+}
+
+.sidebar-content .menu-container ul li strong.date.shopexpire {
+	background: #575757 !important;
+	padding: 5px 10px 3px !important;
+}
+
+.sidebar-content .expirecnt {
+	color: #b33939 !important;
+	font-size: 3em !important;
+	font-weight: bold !important;
+}
+.sidebar-content .jumpleftcnt {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+span.sidebarLabel {
+    position: absolute;
+    top: -8px;
+    right: -7px;
+    background: #6b1d1d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 3px 6px;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+    z-index: 10;
+    letter-spacing: -1px;
+	displaay:none;
+}
+
+.btn.btn-login {
+    color: #333 !important;
+    border-image: none !important;
+    background-image: none !important;
+    border: 1px solid var(--group_color_6);
+    background-color: var(--group_color_4);
+}
+.menu-container .my-menu-item span { line-height: 14px; text-align: center;}
